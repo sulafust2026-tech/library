@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="Logo">
+    </header>
+
+    <h1>SEARCH BOX</h1>
+
+    <nav>
+        <a href="home.html">HOME</a>
+        <a href="books.html">BOOKS</a>
+        <a href="books.html">BUY</a>
+          <a href="box.html">SEARCH BOX</a>
+    <button id="lo"> LOG OUT</button>
+    </nav> 
+    
+    <br><br>
+
+    <center>
+        <section class="search-section">
+            <label for="searchInput">بحث:</label>
+            <input type="text" id="searchInput" placeholder="اكتب للبحث...">
+        </section>
+
+        <br><br><br>
+
+        <section class="box">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="oo">الرقم</th>
+                        <th class="oo">اسم القسم</th>
+                        <th class="oo">الوصف</th>
+                    </tr>
+                </thead>
+                <tbody id="xx">
+                </tbody>
+            </table>
+        </section>
+    </center>
+
+    <script>
+        function searchBooks(query = "") {
+            let url = "box.php";
+            
+            if (query !== "") {
+                url += "?sary=" + encodeURIComponent(query);
+            }
+
+            fetch(url)
+            .then(s => s.json())
+            .then(s1 => {
+                let sshow = document.getElementById("xx");
+                if(sshow && Array.isArray(s1)){
+                    sshow.innerHTML = ""; 
+
+                    if(s1.length === 0) {
+                        sshow.innerHTML = `<tr><td colspan="3">لا توجد نتائج مطابقة</td></tr>`;
+                        return;
+                    }
+
+                    for(let ss of s1) {
+                        sshow.innerHTML += `
+                            <tr>
+                                <td>${ss.id}</td>
+                                <td>${ss.name}</td>
+                                <td>${ss.desc}</td>
+                            </tr>
+                        `;
+                    }
+                }
+            })
+            .catch(error => console.error("حدث خطأ في جلب البيانات:", error));
+        }
+
+        searchBooks();
+
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", function() {
+            searchBooks(searchInput.value);
+        });
+    </script>
+  <script src="out.js"></script>
+
+</body>
+</html>

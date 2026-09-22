@@ -1,0 +1,116 @@
+img{
+    height: 100px;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+body{
+    background-color: rgb(244, 227, 207);
+}
+
+h1{
+    text-align: center;
+    color: rgb(20, 34, 60);
+}
+
+nav{
+    background-color: rgb(20, 34, 60);
+    height: 40px;
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: rgb(244, 227, 207);
+    text-decoration: none;
+}
+
+
+
+.p1{
+      text-align: center;
+    color: rgb(20, 34, 60);
+    font-size: 40px;
+}
+
+.bkscont{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 35px;
+}
+
+#xx{
+     text-align: center;
+    color: rgb(20, 34, 60);
+    font-size: 20px;
+    border: solid  rgb(20, 34, 60);
+ ;
+}
+.a1{
+    color: rgb(244, 227, 207);
+    border: solid rgb(20, 34, 60);
+    background-color: rgb(20, 34, 60);
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.a1:hover{
+    transform: translateY(-3px);
+}
+.bkcard{
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgb(20, 34, 60);
+    border-width: 7px;
+}
+
+.p1{
+    width: 180px;
+    height: 250px;
+}
+
+.pp{
+    text-align: center;
+    font-size:40px ;
+    color: rgb(20, 34, 60) ;
+}
+
+
+ .p1{
+    transition: 0.3s;
+ }
+ .p1:hover{
+    transform: scale(1.1);
+ }
+
+ 
+button{
+    color:rgb(244, 227, 207) ;
+}
+
+#lo{
+        color:rgb(244, 227, 207) ;
+background-color: rgb(20, 34, 60) ;
+border-color: rgb(20, 34, 60) ;
+border-style: none
+
+;
+}
+
+.bo{
+border-color: rgb(20, 34, 60) ;
+color: rgb(20, 34, 60) ;
+
+}
+
+
+.oo{
+
+    color: rgb(20, 34, 60) ;
+
+}
